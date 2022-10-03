@@ -1,0 +1,33 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body
+{
+    overflow: hidden;
+}
+
+.webgl
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+}
+
+
+.output_canvas{
+    position: fixed;
+    right: 5px;
+    bottom: 5px;
+
+    width: 350px;
+    height: 250px;
+
+    z-index: 15;
+
+    /* background-color: aqua;   */
+  }
