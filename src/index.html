@@ -4,15 +4,328 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Three.js - Template - Simple</title>
+    <!-- ModelViewer -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <style>
+      
+      model-viewer{   
+          --poster-color: wheat;
+            position: absolute;
+            top: -9%;
+            width: 100vw;
+            height: 100vh;
+        }
+        </style>
 </head>
 <body>
-    <canvas class="output_canvas"></canvas>
-    <video class="input_video""></video>
+        <canvas class="output_canvas"></canvas>
+    <video class="input_video" style="display: none;"></video>
 
-    <button class="start" style="z-index: 60; background-color: antiquewhite;  position: absolute;  top: 50%; padding: 5px;  left: 45%; font-size: larger;">start</button>
-    <button class="stop" style="z-index: 60; background-color: antiquewhite;  position: absolute;  top: 50%; padding: 5px;  left: 50%; font-size: larger;">stop</button>
-    <canvas class="webgl"></canvas>
+    <button class="hand" style="z-index: 60; background-color: antiquewhite;  position: absolute;  top: 88%; padding: 5px;  left: 38%; font-size: larger;" onclick="loadHandModel()">Hand</button>
+    <button class="keyboard_btn" onclick="loadKeyboard()" style="z-index: 60; background-color: antiquewhite;  position: absolute;  top: 88%; padding: 5px;  left: 44%; font-size: larger;">Keyboard</button>
+    <button class="gamepad" onclick="loadGamepad()" style="z-index: 60; background-color: antiquewhite;  position: absolute;  top: 88%; padding: 5px;  left: 54%; font-size: larger;">Gamepad</button>
+   
+    <button class="start" style="z-index: 60; background-color: antiquewhite;  position: absolute;  top: 88%; padding: 5px;  left: 45%; font-size: larger; display: none;">Start</button>
+    <button class="stop" style="z-index: 60; background-color: antiquewhite;  position: absolute;  top: 88%; padding: 5px;  left: 52%; font-size: larger; display: none;">Stop</button>
+    <canvas class="webgl" style="display: none;"></canvas>
 
+
+    <!-- Model Viewer -->
+    <model-viewer src="car.glb"  camera-controls poster="poster.webp" shadow-intensity="1.16" autoplay environment-image="pillars_1k.hdr" exposure="1" shadow-softness="0.66" auto-rotate min-camera-orbit="auto 53deg 7.074m" max-camera-orbit="auto 91deg auto" min-field-of-view="30deg" camera-orbit="-558.5deg 79.92deg auto">
+        <button class="Hotspot" slot="hotspot-1" data-position="1.354290934124578m 0.6702768316659289m -0.05539096741182489m" data-normal="0.9593404120237271m 0m -0.28225161444736796m" data-visibility-attribute="visible">
+            <div class="HotspotAnnotation">HC-SR04</div>
+        </button><button class="Hotspot" slot="hotspot-3" data-position="-0.011169953394502719m 0.3716297833187853m -0.0599090770062517m" data-normal="0m 1m 0m" data-visibility-attribute="visible">
+            <div class="HotspotAnnotation">L293d Motor Driver Shield</div>
+        </button><button class="Hotspot" slot="hotspot-4" data-position="-1.2223021549933624m 0.23234734684228964m -0.2744637534233657m" data-normal="0m 1m 0m" data-visibility-attribute="visible">
+            <div class="HotspotAnnotation">9v Battery</div>
+        </button><button class="Hotspot" slot="hotspot-5" data-position="0.9180258515590849m -0.16193979301705597m -0.49562096239284736m" data-normal="0.9999999999999997m -8.881784726396864e-16m 2.9802323275873745e-8m" data-visibility-attribute="visible">
+            <div class="HotspotAnnotation">9v DC Motor</div>
+        </button><button class="Hotspot" slot="hotspot-6" data-position="1.4446826532841832m 0.20399139982359638m -0.006978139190279925m" data-normal="0.9999999999999996m 2.980232327587374e-8m -8.881784726396864e-16m" data-visibility-attribute="visible">
+            <div class="HotspotAnnotation">Servo Motor</div>
+        </button><button class="Hotspot" slot="hotspot-7" data-position="-0.19760607409845476m 0.16309666736080336m -0.34825516238174525m" data-normal="0.8772165276448449m -0.010667490516955744m -0.4799764247052057m" data-visibility-attribute="visible">
+            <div class="HotspotAnnotation">Arduino Uno</div>
+        </button>
+        <div class="progress-bar hide" slot="progress-bar">
+            <div class="update-bar"></div>
+        </div>
+    </model-viewer>
+    
+    
+
+    <h1 class="heading" style="position: absolute;  color: antiquewhite;
+    "></h1>
+
+
+
+<div class="keyboard" style="display: none;">
+    <div class="row">
+      <div class="key orange" data-code="Escape" data-macro="orange"></div>
+      <div class="key" data-code="Digit1"></div>
+      <div class="key" data-code="Digit2"></div>
+      <div class="key" data-code="Digit3"></div>
+      <div class="key" data-code="Digit4"></div>
+      <div class="key" data-code="Digit5"></div>
+      <div class="key" data-code="Digit6"></div>
+      <div class="key" data-code="Digit7"></div>
+      <div class="key" data-code="Digit8"></div>
+      <div class="key" data-code="Digit9"></div>
+      <div class="key" data-code="Digit0"></div>
+      <div class="key" data-code="Minus"></div>
+      <div class="key" data-code="Equal"></div>
+      <div class="key size-4 grey stretch" data-code="Backspace"></div>
+      <div class="key red" data-macro="red"></div>
+    </div>
+    <div class="row">
+      <div class="key size-2 grey stretch" data-code="Tab"></div>
+      <div class="key" data-code="KeyQ"></div>
+      <div class="key" data-code="KeyW"></div>
+      <div class="key" data-code="KeyE"></div>
+      <div class="key" data-code="KeyR"></div>
+      <div class="key" data-code="KeyT"></div>
+      <div class="key" data-code="KeyY"></div>
+      <div class="key" data-code="KeyU"></div>
+      <div class="key" data-code="KeyI"></div>
+      <div class="key" data-code="KeyO"></div>
+      <div class="key" data-code="KeyP"></div>
+      <div class="key" data-code="BracketLeft"></div>
+      <div class="key" data-code="BracketRight"></div>
+      <div class="key size-2 grey stretch" data-code="Backslash"></div>
+      <div class="key yellow" data-macro="yellow"></div>
+    </div>
+    <div class="row">
+      <div class="key size-3 grey stretch" data-code="CapsLock"></div>
+      <div class="key" data-code="KeyA"></div>
+      <div class="key" data-code="KeyS"></div>
+      <div class="key" data-code="KeyD"></div>
+      <div class="key" data-code="KeyF"></div>
+      <div class="key" data-code="KeyG"></div>
+      <div class="key" data-code="KeyH"></div>
+      <div class="key" data-code="KeyJ"></div>
+      <div class="key" data-code="KeyK"></div>
+      <div class="key" data-code="KeyL"></div>
+      <div class="key" data-code="Semicolon"></div>
+      <div class="key" data-code="Quote"></div>
+      <div class="key size-5 green stretch" data-code="Enter" data-macro="green:Enter"></div>
+      <div class="key green" data-macro="green"></div>
+    </div>
+    <div class="row">
+      <div class="key size-5 yellow stretch" data-code="ShiftLeft" data-macro="yellow:ShiftLeft"></div>
+      <div class="key" data-code="KeyZ"></div>
+      <div class="key" data-code="KeyX"></div>
+      <div class="key" data-code="KeyC"></div>
+      <div class="key" data-code="KeyV"></div>
+      <div class="key" data-code="KeyB"></div>
+      <div class="key" data-code="KeyN"></div>
+      <div class="key" data-code="KeyM"></div>
+      <div class="key" data-code="Comma"></div>
+      <div class="key" data-code="Period"></div>
+      <div class="key" data-code="Slash"></div>
+      <div class="key size-3 yellow stretch" data-code="ShiftRight" data-macro="yellow:ShiftRight"></div>
+      <div class="key" data-code="ArrowUp"></div>
+      <div class="key blue" data-macro="blue"></div>
+    </div>
+    <div class="row">
+      <div class="key size-6 red" data-code="ControlLeft" data-macro="red:ControlLeft"></div>
+      <div class="key size-6 purple" data-code="MetaLeft" data-macro="purple:MetaLeft"></div>
+      <div class="key size-6 blue" data-code="AltLeft" data-macro="blue:AltLeft"></div>
+      <div class="key size-7 empty" data-code="Space" data-macro="default:Space"></div>
+      <div class="key size-2 blue stretch" data-code="AltRight" data-macro="blue:AltRight"></div>
+      <div class="key size-2 purple stretch" data-code="ContextMenu" data-macro="purple:ContextMenu"></div>
+      <div class="key" data-code="ArrowLeft"></div>
+      <div class="key" data-code="ArrowDown"></div>
+      <div class="key" data-code="ArrowRight"></div>
+    </div>
+  </div>
+  
+
+
+      <script>
+        const keyboard = document.querySelector('.keyboard');
+const rotation = { x: 20, y: 0 };
+// const empty = document.querySelector('.empty');
+// empty.style.color = 'white';
+let animating = [];
+let animatingColor;
+const keysDown = new Set();
+const keyCodeToEle = new Map();
+const allKeys = [ ...document.querySelectorAll('.key') ];
+allKeys.forEach(ele => {
+	ele.dataset.code && keyCodeToEle.set(ele.dataset.code, ele);
+});
+const capsLockKeyIndex = allKeys.indexOf(keyCodeToEle.get('CapsLock'));
+const arrowKeyIndexes = [ 'Up', 'Left', 'Down', 'Right' ].map(n => allKeys.indexOf(keyCodeToEle.get(`Arrow${n}`)));
+const macroKeys = [ document.querySelector('[data-code="Escape"]'), ...document.querySelectorAll('[data-macro]') ];
+const furthestKeys = {};
+requestAnimationFrame(() => {
+	const allKeyBounds = allKeys.map(n => n.getBoundingClientRect());
+	for(const macro of macroKeys) {
+		const index = allKeys.indexOf(macro);
+		const color = macro.dataset.macro;
+		furthestKeys[color] = 0;
+		const macroBounds = allKeyBounds[index];
+		for(let i = 0; i < allKeys.length; i++) {
+			const ele = allKeys[i];
+			if(macro === ele) continue;
+			const eleBounds = allKeyBounds[i];
+			const d = dist(
+				macroBounds.x + macroBounds.width * 0.5, macroBounds.y + macroBounds.height * 0.5,
+				eleBounds.x + eleBounds.width * 0.5, eleBounds.y + eleBounds.height * 0.5
+			);
+			ele.macro = ele.macro || {};
+			ele.macro[color] = d;
+			if(d > furthestKeys[color]) {
+				furthestKeys[color] = d;
+			}
+		}
+	}
+});
+function animateMacro(ele) {
+	const { macro } = ele.dataset;
+	const [ color, id ]  = macro.split(':');
+	if(!keysDown.has(capsLockKeyIndex)) {
+		if([ 'Space', 'ShiftLeft' ].includes(id)) {
+			return;
+		}
+	}
+	animating.push({ time: performance.now(), macro, color });
+	// animating.push({ time: performance.now(), color: macro.split(':')[0] });
+	if(animating.length === 1) {
+		_draw();
+	}
+}
+macroKeys.forEach(ele => {
+	ele.addEventListener('click', () => animateMacro(ele));
+});
+function setKeyState(code, state) {
+	const ele = keyCodeToEle.get(code);
+	if(ele) {
+		if(state) {
+			keysDown.add(allKeys.indexOf(ele));
+			ele.dataset.selected = 'true';
+		}
+		else {
+			ele.dataset.selected = 'false';
+			keysDown.delete(allKeys.indexOf(ele));
+			if(macroKeys.includes(ele)) {
+				animateMacro(ele);
+			}
+		}
+		const [ up, left, down, right ] = arrowKeyIndexes.map(n => keysDown.has(n));
+		if(up) rotation.x += 1;
+		if(left) rotation.y += -1;
+		if(down) rotation.x += -1;
+		if(right) rotation.y += 1;
+		keyboard.style.setProperty('--rot-x', `${rotation.x}deg`);
+		keyboard.style.setProperty('--rot-y', `${rotation.y}deg`);
+	}
+}
+window.addEventListener('keydown', e => {
+	if(e.code.startsWith('F') && !isNaN(e.code.slice(1))) {
+	   return;
+	}
+	e.preventDefault();
+	setKeyState('CapsLock', e.getModifierState('CapsLock'));
+	if(e.code === 'CapsLock') {
+		return;
+	}
+	// if(animating.length) return;
+	// empty.textContent = e.code;
+	// const ele = document.querySelector(`[data-code=${e.code}]`);
+	setKeyState(e.code, true);
+});
+window.addEventListener('keyup', e => {
+	e.preventDefault();
+	setKeyState('CapsLock', e.getModifierState('CapsLock'));
+	if(e.code === 'CapsLock') {
+		return;
+	}
+	// if(animating.length) return;
+	// empty.textContent = e.code;
+	// const ele = document.querySelector(`[data-code=${e.code}]`);
+	setKeyState(e.code, false);
+});
+window.addEventListener('blur', e => {
+	if(animating.length) animating.splice(0);
+	for(const ele of document.querySelectorAll('[data-selected="true"], [data-color]')) {
+		const index = allKeys.indexOf(ele);
+		if(index !== capsLockKeyIndex) {
+			ele.dataset.selected = 'false';
+			ele.dataset.color = '';
+			keysDown.delete(index);
+		}
+	}
+});
+
+function distSq(x1, y1, x2, y2) {
+	const _x = x2 - x1, _y = y2 - y1;
+	return _x * _x + _y * _y;
+}
+function dist(x1, y1, x2, y2) {
+	const d = distSq(x1, y1, x2, y2);
+	if(d === 0) return 0;
+	return Math.sqrt(d);
+}
+
+function _draw(e) {
+	draw(e);
+	if(animating.length) {
+		requestAnimationFrame(_draw);
+	}
+	else {
+		for(const ele of document.querySelectorAll('[data-selected="true"], [data-color]')) {
+			ele.dataset.selected = 'false';
+			ele.dataset.color = '';
+		}
+	}
+}
+
+function draw(e) {
+	if(!animating.length) return;
+	const actions = Array(allKeys.length).fill(false);
+	keysDown.forEach(i => actions[i] = true);
+	const dilation = 100;
+	for(let i = animating.length - 1; i >= 0; i--) {
+		const a = animating[i];
+		const time = e - a.time;
+		const duration = furthestKeys[a.macro] + dilation;
+		if(time >= duration) {
+			animating.splice(i, 1);
+			return;
+		}
+		for(let keyIndex = 0; keyIndex < allKeys.length; keyIndex++) {
+			const key = allKeys[keyIndex];
+			const d = key.macro[a.macro];
+			const t = Math.abs(time - d);
+			if(t < dilation && !actions[keyIndex]) {
+				actions[keyIndex] = a.color;
+			}
+		}
+	}
+	for(let i = 0; i < actions.length; i++) {
+		const key = allKeys[i];
+		if(actions[i]) {
+			key.dataset.selected = 'true';
+			if(typeof actions[i] === 'string') {
+				key.dataset.color = actions[i];
+			}
+		}
+		else {
+			key.dataset.color = '';
+			key.dataset.selected = 'false';
+		}
+	}
+}
+      </script>
+
+      <!-- <script>
+        let root = document.documentElement;
+    
+    root.addEventListener('mousemove', e => {
+      root.style.setProperty('--mouse-x', e.clientX + "px");
+      root.style.setProperty('--mouse-y', e.clientY + "px");
+    });
+      </script> -->
 
 
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>

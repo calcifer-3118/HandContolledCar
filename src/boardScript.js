@@ -35,26 +35,36 @@ board.on("ready", () => {
 
 
 
-    const stop = ()=> {
+    const stop = (socket)=> {
+      if(socket)
+          socket.send('stop')
        rightMotor.stop();
        leftMotor.stop();  
     }
 
     stop();
 
-    const forward = ()=>{
+    const forward = (socket)=>{
+          if(socket)
+            socket.send('fwd')
           leftMotor.forward(255);
           rightMotor.forward(255);
     }
-    const reverse = ()=>{
+    const reverse = (socket)=>{
+          if(socket)
+            socket.send('rev')
           leftMotor.reverse(255);
           rightMotor.reverse(255);
     }
-    const left = ()=>{
+    const left = (socket)=>{
+          if(socket)
+            socket.send('left')
           rightMotor.forward(255);         
           leftMotor.reverse(255);         
     }
-    const right = ()=>{
+    const right = (socket)=>{
+          if(socket)
+            socket.send('right')
           leftMotor.forward(255);
           rightMotor.reverse(255);
     }
@@ -109,7 +119,7 @@ board.on("ready", () => {
      * Gameoad Controls
      */
     let gamepad_called = false;
-    let gamepadCtrls = ()=> {
+    let gamepadCtrls = (socket)=> {
     
                 const Gamecontroller = require('../gamecontroller/gamecontroller');
                 const gamepad = new Gamecontroller('gamesir_g4s');
@@ -120,19 +130,19 @@ board.on("ready", () => {
               
               
                 gamepad.on('X:press', function() {
-                  forward();
+                  forward(socket);
                 });
               
                 gamepad.on('X:release', function() {
-                  stop();
+                  stop(socket);
                 });
               
                 gamepad.on('B:press', function() {
-                  reverse();
+                  reverse(socket);
                 });
               
                 gamepad.on('B:release', function() {
-                  stop();
+                  stop(socket);
                 });
               
                 gamepad.on('JOYR:move', function(data) {
@@ -140,26 +150,26 @@ board.on("ready", () => {
                   const normal_speed = normalizeVal(data.y, 255 , 127)
                   const speed = Math.abs(normal_speed) * 255;
                   if(normal_speed < 0)
-                    forward(speed)
+                    forward(socket)
                 
                   else if(normal_speed > 0)
-                    reverse(speed)
+                    reverse(socket)
                 
                   else
-                    stop();
+                    stop(socket);
                 
                 });
               
                 gamepad.on('JOYL:move', function(data) {
                   console.log(data.x)
                   if(data.x < 128)
-                    left();
+                    left(socket);
                 
                   else if( data.x > 128)
-                    right();
+                    right(socket);
                 
                   else
-                    stop();
+                    stop(socket);
                 });
               
               
@@ -253,7 +263,7 @@ board.on("ready", () => {
            //Gamepad Controls
            else if(data == 'gamepad' && !gamepad_called)
             {
-              gamepadCtrls();
+              gamepadCtrls(socket);
               gamepad_called = true;
             }
           
@@ -269,7 +279,7 @@ board.on("ready", () => {
     })  
     
     
-    gamepadCtrls();
+    // gamepadCtrls(socket);
     
     
     
