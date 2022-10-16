@@ -1,0 +1,108 @@
+.slide1691-container {
+  min-height: 100vh;
+}
+.slide1691-slide1691 {
+  width: 100%;
+  height: 1080px;
+  display: flex;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  background-image: linear-gradient(56deg, rgba(146, 57, 57, 1) 0%, rgba(165, 42, 101, 0.8299999833106995) 100%);
+}
+.slide1691-rectangle1 {
+  top: 4%;
+  left: 20vw;
+  width: 1228px;
+  height: 664px;
+  position: absolute;
+  border-color: transparent;
+}
+.slide1691-group1 {
+  top: 70%;
+  left: 41vw;
+  width: 548px;
+  height: 69px;
+  display: flex;
+  padding: 0;
+  position: absolute;
+  align-self: auto;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+.slide1691-ellipse1 {
+  top: 6px;
+  left: 0px;
+  width: 46px;
+  height: 46px;
+  position: absolute;
+  border-color: transparent;
+}
+.slide1691-text {
+  left: 71px;
+  color: rgba(255, 255, 255, 1);
+  width: 477px;
+  height: auto;
+  position: absolute;
+  font-size: 48px;
+  align-self: auto;
+  font-style: Thin;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 100;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.slide1691-rectangle2 {
+  top: 78%;
+  left: 50vw;
+  width: 214px;
+  height: 70px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+}
+.slide1691-rectangle21 {
+  top: 0px;
+  left: 0px;
+  width: 214px;
+  height: 70px;
+  position: absolute;
+  border-color: transparent;
+  border-radius: 16px;
+}
+.slide1691-text2 {
+  top: 9px;
+  color: rgba(0, 0, 0, 1);
+  width: 214px;
+  height: auto;
+  position: absolute;
+  font-size: 48px;
+  align-self: auto;
+  font-style: Thin;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 100;
+  line-height: normal;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}

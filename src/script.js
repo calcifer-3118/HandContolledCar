@@ -1,4 +1,6 @@
 import './style.css'
+import './home.css'
+import './slide1691.css'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
@@ -11,7 +13,29 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
  socket.onerror = error => {
    console.error(error)
+
+   document.getElementsByClassName('slide1691-text')[0].style.display = "block"
+   document.getElementsByClassName('myEllipse')[0].style.display = "block"
+
+   document.getElementsByClassName('slide1691-text')[0].innerHTML = "Server not connected"
+   document.getElementsByClassName('myEllipse')[0].style = "fill:rgb(244, 71, 52);"
+
+   document.getElementById('retry').style.display = "block"
+   document.getElementById('start').style.display = "none"
+
+
+
  }
+
+ socket.onopen = ()=> {
+
+ document.getElementsByClassName('slide1691-text')[0].style.display = "block"
+ document.getElementsByClassName('myEllipse')[0].style.display = "block"
+ document.getElementById('start').style.display = "block"
+
+
+ }
+
  
  
  
@@ -66,7 +90,7 @@ const loadModels = (url)=>{
     })
   }
   
-  loadModels('/car.glb')  
+  loadModels('car.glb')  
   let stop_anim = false;
 const animate = (direction)=>{
   if(!stop_anim){
@@ -106,21 +130,35 @@ socket.onmessage = ({data}) => {
 
 
 
+window.start = ()=>{
+  
+  
+  document.getElementsByTagName("model-viewer")[0].style.display = 'none'
+  document.getElementsByTagName("model-viewer")[0].style.display = 'none'
+
+  document.getElementsByClassName('slide1691-container')[0].style.display = "none"
+
+  document.getElementsByClassName('home-slide1691')[0].style.display = 'flex'
+
+ 
+
+}
+
+
 
 /**
  * Hand Detection
  */
 window.loadHandModel = ()=>{
 
+     document.getElementsByClassName('home-frame1')[0].style.display = 'none'
+     document.getElementsByClassName('home-text')[0].style.display = 'none'
+
 
      document.getElementsByClassName('start')[0].style.display = 'inline'
      document.getElementsByClassName('stop')[0].style.display = 'inline'
 
-     document.getElementsByClassName('hand')[0].style.display = 'none'
-     document.getElementsByClassName('gamepad')[0].style.display = 'none'
-     document.getElementsByClassName('keyboard_btn')[0].style.display = 'none'
-     
-     document.getElementsByTagName("model-viewer")[0].style.display = 'none'
+
      document.getElementsByClassName('webgl')[0].style.display = 'block'
 
      
@@ -144,6 +182,8 @@ window.loadHandModel = ()=>{
         
          document.getElementsByClassName('start')[0].onclick = ()=> toStart = true;  
          document.getElementsByClassName('stop')[0].onclick = ()=> {toStart = false; socket.send('stop')}
+
+         console.log(toStart)
         
         
        if(toStart){  
@@ -208,14 +248,10 @@ window.loadHandModel = ()=>{
 
 window.loadKeyboard = ()=>{
 
-  document.getElementsByClassName('hand')[0].style.display = 'none'
-  document.getElementsByClassName('gamepad')[0].style.display = 'none'
-  document.getElementsByClassName('keyboard_btn')[0].style.display = 'none'
-
-  document.getElementsByClassName('keyboard')[0].style.display = 'block'
-  
-  document.getElementsByTagName("model-viewer")[0].style.display = 'none'
+  document.getElementsByClassName('home-frame1')[0].style.display = 'none'
+  document.getElementsByClassName('home-text')[0].style.display = 'none'
   document.getElementsByClassName('webgl')[0].style.display = 'block'
+  
 
   window.addEventListener('keydown', (e) => {
       if(e.keyCode == 87) 
@@ -249,13 +285,11 @@ window.loadKeyboard = ()=>{
 
 window.loadGamepad = ()=>{
 
+  document.getElementsByClassName('home-frame1')[0].style.display = 'none'
+  document.getElementsByClassName('home-text')[0].style.display = 'none'
+
   socket.send('gamepad')
 
-  document.getElementsByClassName('hand')[0].style.display = 'none'
-  document.getElementsByClassName('gamepad')[0].style.display = 'none'
-  document.getElementsByClassName('keyboard_btn')[0].style.display = 'none'
-  
-  document.getElementsByTagName("model-viewer")[0].style.display = 'none'
   document.getElementsByClassName('webgl')[0].style.display = 'block'
 }
 
@@ -346,7 +380,7 @@ scene.add(light, mainLight)
 const renderer = new THREE.WebGLRenderer({
     canvas: canvas,
     antialias: true,
-    alpha: true
+    alpha: true 
 })
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
