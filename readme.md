@@ -1,4 +1,3 @@
-# Three.js - Template - Simple
 
 ## Setup
 Download [Node.js](https://nodejs.org/en/download/).
