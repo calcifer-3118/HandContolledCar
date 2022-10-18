@@ -181,7 +181,7 @@ window.loadHandModel = ()=>{
            // console.log(z)
         
          document.getElementsByClassName('start')[0].onclick = ()=> toStart = true;  
-         document.getElementsByClassName('stop')[0].onclick = ()=> {toStart = false; socket.send('stop')}
+         document.getElementsByClassName('stop')[0].onclick = ()=> {toStart = false; socket.send('stop'); stop_anim = true;  animate(allClips);  document.getElementsByClassName('heading')[0].innerHTML = '' }
 
          console.log(toStart)
         
