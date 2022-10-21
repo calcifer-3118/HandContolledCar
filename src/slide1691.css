@@ -15,15 +15,13 @@
   background-image: linear-gradient(56deg, rgba(146, 57, 57, 1) 0%, rgba(165, 42, 101, 0.8299999833106995) 100%);
 }
 .slide1691-rectangle1 {
-  top: 4%;
   left: 20vw;
-  width: 1228px;
-  height: 664px;
+  width: 100vw;
+  height: 30vh;
   position: absolute;
   border-color: transparent;
 }
 .slide1691-group1 {
-  top: 70%;
   left: 41vw;
   width: 548px;
   height: 69px;
@@ -43,6 +41,8 @@
   flex-direction: row;
   justify-content: flex-start;
   background-color: transparent;
+
+  top: 80vh;
 }
 .slide1691-ellipse1 {
   top: 6px;
@@ -69,7 +69,7 @@
   text-decoration: none;
 }
 .slide1691-rectangle2 {
-  top: 78%;
+  top: 88vh;
   left: 50vw;
   width: 214px;
   height: 70px;

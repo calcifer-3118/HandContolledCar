@@ -1,216 +1,117 @@
 body {
   overflow: hidden; /* Hide scrollbars */
   border-color: transparent;
-  background-image: linear-gradient(56deg, rgba(146, 57, 57, 1) 0%, rgba(165, 42, 101, 0.8299999833106995) 100%);
-}
-
-.home-container {
-  width: 100%;
-  display: flex;
-  overflow: auto;
-  min-height: 100vh;
-  align-items: center;
-  flex-direction: column;
-}
-.home-slide1691 {
-  width: 100%;
-  height: 1080px;
-  display: flex;
-  overflow: hidden;
-  position: absolute;
-  align-items: flex-start;
-  flex-shrink: 0;
-  border-color: transparent;
-  background-image: linear-gradient(56deg, rgba(146, 57, 57, 1) 0%, rgba(165, 42, 101, 0.8299999833106995) 100%);
-}
-.home-text {
-  top: 72px;
-  left: 471px;
-  color: rgba(255, 255, 255, 1);
-  width: 978px;
-  height: auto;
-  position: absolute;
-  font-size: 96px;
-  align-self: auto;
-  font-style: Thin;
-  text-align: center;
-  font-family: Inter;
-  font-weight: 100;
-  line-height: normal;
-  font-stretch: normal;
-  margin-right: 0;
-  margin-bottom: 0;
-  text-decoration: none;
-}
-.home-frame1 {
-  top: 307px;
-  left: 94px;
-  width: 1731px;
-  height: 627px;
-  display: flex;
-  position: absolute;
-  align-items: flex-end;
-  flex-shrink: 0;
-  border-color: transparent;
-}
-.home-group1 {
-  width: 475px;
-  height: 627px;
-  display: flex;
+  margin: 0;
   padding: 0;
-  position: relative;
-  flex-grow: 1;
-  align-self: auto;
-  box-sizing: border-box;
-  align-items: flex-start;
-  flex-shrink: 1;
-  margin-right: 153px;
-  margin-bottom: 0;
-  flex-direction: row;
-  justify-content: flex-start;
+  height: 100%;
+  background-image: linear-gradient(56deg, rgba(146, 57, 57, 1) 0%, rgba(165, 42, 101, 0.8299999833106995) 100%);
+}
 
+.parent_container{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  margin: 0; 
   
 
-  background: linear-gradient(156.54deg, rgba(255, 255, 255, 0.4) 42.87%, rgba(217, 217, 217, 0.4) 131.97%, rgba(255, 255, 255, 0.1) 131.97%);
-backdrop-filter: blur(20px);
-/* Note: backdrop-filter has minimal browser support */
-
-border-radius: 30px;
-
-}
-
-.home-group1:hover {
-  cursor: pointer;
-  transform: scale(1.05); 
-}
-.home-group2:hover {
-  cursor: pointer;
-  transform: scale(1.05); 
-}
-.home-group3:hover {
-  cursor: pointer;
-  transform: scale(1.05); 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
 }
 
 
-.home-rectangle1 {
-  top: 0px;
-  left: 1.000107765197754px;
-  width: 474px;
-  height: 627px;
+model-viewer{
   position: absolute;
+  margin-bottom: 7%;
+  scale: 4;
 }
-.home-rectangle2 {
-  top: 332px;
-  left: 0px;
-  width: 475px;
-  height: 293px;
+
+.HotspotAnnotation{
+  z-index: 5;
+  background: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  color: rgba(0, 0, 0, 0.8);
+  display: block;
+  font-family: Futura, Helvetica Neue, sans-serif;
+  font-size: .5vh;
+  font-weight: 700;
+  max-width: 128px;
+  overflow-wrap: break-word;
+  padding: 0.5em 1em;
   position: absolute;
-  border-color: transparent;
-  border-radius: 49px 49px 30px 30px;
+  width: max-content;
+  height: max-content;
+  transform: translate3d(-50%, -50%, 0);
+  --min-hotspot-opacity: 0;
 }
-.home-rectangle5 {
-  top: 18.567291259765625px;
-  left: 37.103450775146484px;
-  width: 398px;
-  height: 298px;
+
+
+.serverTextContainer{
   position: absolute;
-  border-color: transparent;
-}
-.home-group3 {
-  width: 475px;
-  height: 627px;
+  top: 80%;
+
   display: flex;
-  padding: 0;
-  position: relative;
-  flex-grow: 1;
-  align-self: auto;
-  box-sizing: border-box;
-  align-items: flex-start;
-  flex-shrink: 1;
-  margin-right: 153px;
-  border-radius: 0px 0px 0px 0px;
-  margin-bottom: 0;
   flex-direction: row;
-  justify-content: flex-start;
+}
 
-  background: linear-gradient(156.54deg, rgba(255, 255, 255, 0.4) 42.87%, rgba(217, 217, 217, 0.4) 131.97%, rgba(255, 255, 255, 0.1) 131.97%);
-backdrop-filter: blur(20px);
-/* Note: backdrop-filter has minimal browser support */
-
-border-radius: 30px;
-
-}
-.home-rectangle11 {
-  top: 0px;
-  left: 0.9995082020759583px;
-  width: 474px;
-  height: 627px;
-  position: absolute;
-}
-.home-rectangle21 {
-  top: 332px;
-  left: 0px;
-  width: 475px;
-  height: 293px;
-  position: absolute;
-  border-color: transparent;
-  border-radius: 49px 49px 30px 30px;
-}
-.home-rectangle4 {
-  top: 16px;
-  left: 43.00001525878906px;
-  width: 398px;
-  height: 298px;
-  position: absolute;
-  border-color: transparent;
-}
-.home-group2 {
-  width: 475px;
-  height: 627px;
+.circle{
   display: flex;
-  padding: 0;
-  position: relative;
-  flex-grow: 1;
-  align-self: auto;
-  box-sizing: border-box;
-  align-items: flex-start;
-  flex-shrink: 1;
-  margin-right: 0;
-  border-radius: 0px 0px 0px 0px;
-  margin-bottom: 0;
-  flex-direction: row;
-  justify-content: flex-start;
-
-  background: linear-gradient(156.54deg, rgba(255, 255, 255, 0.4) 42.87%, rgba(217, 217, 217, 0.4) 131.97%, rgba(255, 255, 255, 0.1) 131.97%);
-backdrop-filter: blur(20px);
-/* Note: backdrop-filter has minimal browser support */
-
-border-radius: 30px;
-
-
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 15px;
 }
-.home-rectangle12 {
-  top: 0px;
-  left: 1.0000901222229004px;
-  width: 474px;
-  height: 627px;
+
+.dot {
+  height: 2.2vh;
+  width: 2.2vh;
+  background-color: rgb(250, 93, 93);
+  /* rgb(139 243 130 / 83%); */
+  border-radius: 50%;
+  vertical-align: baseline;
+}
+
+.server_text{
+  vertical-align: baseline;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100;
+  font-size: 3.5vh;
+  line-height: 58px;
+  color: #efb6b6;
+}
+
+.button{
   position: absolute;
+  top: 61%;
+  left: 40%;
 }
-.home-rectangle22 {
-  top: 332px;
-  left: 0px;
-  width: 475px;
-  height: 293px;
-  position: absolute;
-  border-color: transparent;
-  border-radius: 49px 49px 30px 30px;
+
+.home_start{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100;
+  font-size: 3.5vh;
+  line-height: 58px;
+  color: #a79ba7;
+
+  cursor: pointer;
 }
-.home-rectangle3 {
-  top: 16px;
-  left: 44.00001907348633px;
-  width: 388px;
-  height: 298px;
-  position: absolute;
-  border-color: transparent;
+
+
+@media(max-width:321px){
+  #modelCar{
+    scale: 4;
+  } 
 }
+/* For 1024 Resolution */  
+@media only screen   
+and (min-device-width : 768px)   
+and (max-device-width : 1024px)  
+{   
+    #modelCar{
+      scale: 4;
+    } 
+}  
