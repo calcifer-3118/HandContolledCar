@@ -1,131 +1,240 @@
 <!DOCTYPE html>
 <html lang="english">
-  <head>
-    <title>exported project</title>
-    <meta property="og:title" content="exported project" />
 
-     <!-- ModelViewer -->
-     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+<head>
+  <title>exported project</title>
+  <meta property="og:title" content="exported project" />
 
-    <style data-tag="reset-style-sheet">
-      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6 {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
-    </style>
-    <style data-tag="default-style-sheet">
-      html {
-        font-family: Inter;
-        font-size: 16px;
-      }
+  <!-- ModelViewer -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+    crossorigin="anonymous" />
 
-      body {
-        font-weight: 400;
-        font-style:normal;
-        text-decoration: none;
-        text-transform: none;
-        letter-spacing: normal;
-        line-height: 1.15;
-        color: var(--dl-color-gray-black);
-        background-color: var(--dl-color-gray-white);
+  <style data-tag="reset-style-sheet">
+    html {
+      line-height: 1.15;
+    }
 
-      }
-    </style>
+    body {
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+      border-width: 0;
+      border-style: solid;
+    }
+
+    p,
+    li,
+    ul,
+    pre,
+    div,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 0;
+      padding: 0;
+    }
+
+    button {
+      background-color: transparent;
+    }
+
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+      font-family: inherit;
+      font-size: 100%;
+      line-height: 1.15;
+      margin: 0;
+    }
+
+    button,
+    select {
+      text-transform: none;
+    }
+
+    button,
+    [type="button"],
+    [type="reset"],
+    [type="submit"] {
+      -webkit-appearance: button;
+    }
+
+    button::-moz-focus-inner,
+    [type="button"]::-moz-focus-inner,
+    [type="reset"]::-moz-focus-inner,
+    [type="submit"]::-moz-focus-inner {
+      border-style: none;
+      padding: 0;
+    }
+
+    button:-moz-focus,
+    [type="button"]:-moz-focus,
+    [type="reset"]:-moz-focus,
+    [type="submit"]:-moz-focus {
+      outline: 1px dotted ButtonText;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: inherit;
+    }
+
+    input {
+      padding: 2px 4px;
+    }
+
+    img {
+      display: block;
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+  </style>
+  <style data-tag="default-style-sheet">
+    html {
+      font-family: Inter;
+      font-size: 16px;
+    }
+
+    body {
+      font-weight: 400;
+      font-style: normal;
+      text-decoration: none;
+      text-transform: none;
+      letter-spacing: normal;
+      line-height: 1.15;
+      color: var(--dl-color-gray-black);
+      background-color: var(--dl-color-gray-white);
+
+    }
+  </style>
 
 
 
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
-      data-tag="font"
-    />
-    
-  </head>
-  <body>
-    <div>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+    data-tag="font" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+    data-tag="font" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+    data-tag="font" />
 
-      
-      <div class="home-container">
+</head>
 
-                <canvas class="output_canvas" style="display: none;     z-index: 900;
+<body>
+
+
+
+  <div>
+
+    <div class="home-container">
+
+      <canvas class="output_canvas" style="display: none;     z-index: 900;
                 display: block;
                 position: absolute;
                 top: 80%;
                 left: 82%;"></canvas>
-                <video class="input_video" style="display: none;"></video>
+      <video class="input_video" style="display: none;"></video>
 
-                
-                <h1 class="heading" style="position: absolute; font-size: 108px; top: 4%; left: 4%; color:rgb(255, 255, 255)e;
+
+      <h1 class="heading" style="position: absolute; font-size: 108px; top: 4%; left: 4%; color:rgb(255, 255, 255)e;
                  "></h1>
 
-              
-                <button class="start" style="z-index: 60; background-color: antiquewhite;  position: absolute;  top: 88%; padding: 5px;  left: 45%; font-size: larger; display: none; z-index: 900;">Start</button>
-                <button class="stop" style="z-index: 60; background-color: antiquewhite;  position: absolute;  top: 88%; padding: 5px;  left: 52%; font-size: larger; display: none; z-index: 900;">Stop</button>
-                <canvas class="webgl" style="display: none; z-index: 90; height: 70vh; position: absolute; top: -9%"></canvas>
+
+      <button class="start"
+        style="z-index: 60; background-color: antiquewhite;  position: absolute;  top: 88%; padding: 5px;  left: 45%; font-size: larger; display: none; z-index: 900;">Start</button>
+      <button class="stop"
+        style="z-index: 60; background-color: antiquewhite;  position: absolute;  top: 88%; padding: 5px;  left: 52%; font-size: larger; display: none; z-index: 900;">Stop</button>
+
+      <canvas class="webgl" style="display: none; z-index: 90; height: 70vh; position: absolute; top: -9%"></canvas>
 
 
-                <div class="slide1691-container">
-                  <div class="slide1691-slide1691">
-                    <div class="slide1691-rectangle1"> 
+      <div class="slide1691-container">
+        <div class="slide1691-slide1691">
+          <div class="slide1691-rectangle1">
 
-                      <model-viewer src="car.glb"  camera-controls poster="poster.webp" shadow-intensity="1.16" autoplay environment-image="pillars_1k.hdr" exposure="1" shadow-softness="0.66" auto-rotate min-camera-orbit="auto 53deg 7.074m" max-camera-orbit="auto 91deg auto" min-field-of-view="30deg" camera-orbit="-558.5deg 79.92deg auto">
-        <button class="Hotspot" slot="hotspot-1" data-position="1.354290934124578m 0.6702768316659289m -0.05539096741182489m" data-normal="0.9593404120237271m 0m -0.28225161444736796m" data-visibility-attribute="visible">
-            <div class="HotspotAnnotation">HC-SR04</div>
-        </button><button class="Hotspot" slot="hotspot-3" data-position="-0.011169953394502719m 0.3716297833187853m -0.0599090770062517m" data-normal="0m 1m 0m" data-visibility-attribute="visible">
-            <div class="HotspotAnnotation">L293d Motor Driver Shield</div>
-        </button><button class="Hotspot" slot="hotspot-4" data-position="-1.2223021549933624m 0.23234734684228964m -0.2744637534233657m" data-normal="0m 1m 0m" data-visibility-attribute="visible">
-            <div class="HotspotAnnotation">9v Battery</div>
-        </button><button class="Hotspot" slot="hotspot-5" data-position="0.9180258515590849m -0.16193979301705597m -0.49562096239284736m" data-normal="0.9999999999999997m -8.881784726396864e-16m 2.9802323275873745e-8m" data-visibility-attribute="visible">
-            <div class="HotspotAnnotation">9v DC Motor</div>
-        </button><button class="Hotspot" slot="hotspot-6" data-position="1.4446826532841832m 0.20399139982359638m -0.006978139190279925m" data-normal="0.9999999999999996m 2.980232327587374e-8m -8.881784726396864e-16m" data-visibility-attribute="visible">
-            <div class="HotspotAnnotation">Servo Motor</div>
-        </button><button class="Hotspot" slot="hotspot-7" data-position="-0.19760607409845476m 0.16309666736080336m -0.34825516238174525m" data-normal="0.8772165276448449m -0.010667490516955744m -0.4799764247052057m" data-visibility-attribute="visible">
-            <div class="HotspotAnnotation">Arduino Uno</div>
-        </button>
-        <div class="progress-bar hide" slot="progress-bar">
-            <div class="update-bar"></div>
+            <model-viewer src="car.glb" camera-controls poster="poster.webp" shadow-intensity="1.16" autoplay
+              environment-image="pillars_1k.hdr" exposure="1" shadow-softness="0.66" auto-rotate
+              min-camera-orbit="auto 53deg 7.074m" max-camera-orbit="auto 91deg auto" min-field-of-view="30deg"
+              camera-orbit="-558.5deg 79.92deg auto">
+              <button class="Hotspot" slot="hotspot-1"
+                data-position="1.354290934124578m 0.6702768316659289m -0.05539096741182489m"
+                data-normal="0.9593404120237271m 0m -0.28225161444736796m" data-visibility-attribute="visible">
+                <div class="HotspotAnnotation">HC-SR04</div>
+              </button><button class="Hotspot" slot="hotspot-3"
+                data-position="-0.011169953394502719m 0.3716297833187853m -0.0599090770062517m" data-normal="0m 1m 0m"
+                data-visibility-attribute="visible">
+                <div class="HotspotAnnotation">L293d Motor Driver Shield</div>
+              </button><button class="Hotspot" slot="hotspot-4"
+                data-position="-1.2223021549933624m 0.23234734684228964m -0.2744637534233657m" data-normal="0m 1m 0m"
+                data-visibility-attribute="visible">
+                <div class="HotspotAnnotation">9v Battery</div>
+              </button><button class="Hotspot" slot="hotspot-5"
+                data-position="0.9180258515590849m -0.16193979301705597m -0.49562096239284736m"
+                data-normal="0.9999999999999997m -8.881784726396864e-16m 2.9802323275873745e-8m"
+                data-visibility-attribute="visible">
+                <div class="HotspotAnnotation">9v DC Motor</div>
+              </button><button class="Hotspot" slot="hotspot-6"
+                data-position="1.4446826532841832m 0.20399139982359638m -0.006978139190279925m"
+                data-normal="0.9999999999999996m 2.980232327587374e-8m -8.881784726396864e-16m"
+                data-visibility-attribute="visible">
+                <div class="HotspotAnnotation">Servo Motor</div>
+              </button><button class="Hotspot" slot="hotspot-7"
+                data-position="-0.19760607409845476m 0.16309666736080336m -0.34825516238174525m"
+                data-normal="0.8772165276448449m -0.010667490516955744m -0.4799764247052057m"
+                data-visibility-attribute="visible">
+                <div class="HotspotAnnotation">Arduino Uno</div>
+              </button>
+              <div class="progress-bar hide" slot="progress-bar">
+                <div class="update-bar"></div>
+              </div>
+            </model-viewer>
+
+          </div>
+          <div class="slide1691-group1">
+            <svg height="50" width="68">
+              <ellipse class="myEllipse" cx="40" cy="32" rx="16" ry="16"
+                style="fill:rgb(78, 217, 94); display: none; " />
+            </svg>
+            <span class="slide1691-text" style="display: none;">
+              <span>Server connected</span>
+            </span>
+          </div>
+          <div class="slide1691-rectangle2">
+
+            <span class="slide1691-text2" id="start" onclick="start()"
+              style="color: rgb(170, 158, 158); cursor:pointer; display: none;"><span>START</span></span>
+            <span class="slide1691-text2" id="retry" onclick="location.reload()"
+              style="color: rgb(170, 158, 158); cursor:pointer; display: none;"><span>RETRY</span></span>
+          </div>
         </div>
-    </model-viewer>
-
-                    </div>
-                    <div class="slide1691-group1">
-                      <svg height="50" width="68">
-                        <ellipse class="myEllipse" cx="40" cy="32" rx="16" ry="16"
-                        style="fill:rgb(78, 217, 94); display: none; " />
-                      </svg>
-                      <span class="slide1691-text" style="display: none;">
-                        <span>Server connected</span>
-                      </span>
-                    </div>
-                    <div class="slide1691-rectangle2">
-                      
-                      <span class="slide1691-text2" id="start" onclick="start()" style="color: rgb(170, 158, 158); cursor:pointer; display: none;"><span>START</span></span>
-                      <span class="slide1691-text2" id="retry" onclick="location.reload()"  style="color: rgb(170, 158, 158); cursor:pointer; display: none;"><span>RETRY</span></span>
-                    </div>
-                  </div>
-                </div>
-
-    
-
-                
+      </div>
 
 
-        <div class="home-slide1691" style="display: none;">
-          <span class="home-text"><span>Select an Input Type</span></span>
-          <div class="home-frame1">
-            <div class="home-group1" onclick="loadKeyboard()">
-              <img
-                src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/faccc746-c281-4a70-89bc-0bd9d56ba285/583a8100-e133-4942-8ea8-3fe75f42299f?org_if_sml=1146222"
-                class="home-rectangle2"
-              >  <h1 style=" position:absolute; top: 70%; left: 20%; font-family: 'Inter';
+
+
+
+
+      <div class="home-slide1691" style="display: none;">
+        <span class="home-text"><span>Select an Input Type</span></span>
+        <div class="home-frame1">
+          <div class="home-group1" onclick="loadKeyboard()">
+            <img
+              src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/faccc746-c281-4a70-89bc-0bd9d56ba285/583a8100-e133-4942-8ea8-3fe75f42299f?org_if_sml=1146222"
+              class="home-rectangle2">
+            <h1 style=" position:absolute; top: 70%; left: 20%; font-family: 'Inter';
               font-style: normal;
               font-weight: 200;
               font-size: 64px;
@@ -141,16 +250,15 @@
               
               ">KeyBoard</h1> </img>
 
-              <img
-                src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/faccc746-c281-4a70-89bc-0bd9d56ba285/1881b4ff-153c-4e27-8be5-0f1f84f0b170?org_if_sml=147148"
-                class="home-rectangle5"
-              />
-            </div>
-            <div class="home-group3" onclick="loadHandModel()">
-              <img
-                src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/faccc746-c281-4a70-89bc-0bd9d56ba285/8092141b-4f5a-4139-a5b1-1d1fa30cd3d4?org_if_sml=1146222"
-                class="home-rectangle21"
-                >  <h1 style=" position:absolute; top: 70%; left: 30%; font-family: 'Inter';
+            <img
+              src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/faccc746-c281-4a70-89bc-0bd9d56ba285/1881b4ff-153c-4e27-8be5-0f1f84f0b170?org_if_sml=147148"
+              class="home-rectangle5" />
+          </div>
+          <div class="home-group3" onclick="loadHandModel()">
+            <img
+              src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/faccc746-c281-4a70-89bc-0bd9d56ba285/8092141b-4f5a-4139-a5b1-1d1fa30cd3d4?org_if_sml=1146222"
+              class="home-rectangle21">
+            <h1 style=" position:absolute; top: 70%; left: 30%; font-family: 'Inter';
                 font-style: normal;
                 font-weight: 200;
                 font-size: 64px;
@@ -165,16 +273,15 @@
                 text-fill-color: transparent;
                 
                 ">Hands</h1> </img>
-              <img
-                src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/faccc746-c281-4a70-89bc-0bd9d56ba285/daaeec78-ce90-475f-8504-f743be066d91?org_if_sml=146202"
-                class="home-rectangle4"
-              />
-            </div>
-            <div class="home-group2" onclick="loadGamepad()">
-              <img
-                src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/faccc746-c281-4a70-89bc-0bd9d56ba285/0c679a12-d1e5-4c86-96f6-1a2a659d86a8?org_if_sml=1146224"
-                class="home-rectangle22"
-                >  <h1 style=" position:absolute; top: 70%; left: 20%; font-family: 'Inter';
+            <img
+              src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/faccc746-c281-4a70-89bc-0bd9d56ba285/daaeec78-ce90-475f-8504-f743be066d91?org_if_sml=146202"
+              class="home-rectangle4" />
+          </div>
+          <div class="home-group2" onclick="loadGamepad()">
+            <img
+              src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/faccc746-c281-4a70-89bc-0bd9d56ba285/0c679a12-d1e5-4c86-96f6-1a2a659d86a8?org_if_sml=1146224"
+              class="home-rectangle22">
+            <h1 style=" position:absolute; top: 70%; left: 20%; font-family: 'Inter';
                 font-style: normal;
                 font-weight: 200;
                 font-size: 64px;
@@ -189,26 +296,24 @@
                 text-fill-color: transparent;
                 
                 ">GamePad</h1> </img>
-              <img
-                src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/faccc746-c281-4a70-89bc-0bd9d56ba285/a3dbcb8c-1570-44a9-81bf-cbb4153f3c98?org_if_sml=149844"
-                class="home-rectangle3"
-              />
-            </div>
+            <img
+              src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/faccc746-c281-4a70-89bc-0bd9d56ba285/a3dbcb8c-1570-44a9-81bf-cbb4153f3c98?org_if_sml=149844"
+              class="home-rectangle3" />
           </div>
         </div>
       </div>
     </div>
-  </body>
+  </div>
+</body>
 
 
 
 
 
-  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
 
 
 

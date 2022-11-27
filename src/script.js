@@ -8,7 +8,8 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 /**
  * Server
- */
+*/
+
  const socket = new WebSocket('ws://localhost:8085')
 
  socket.onerror = error => {
@@ -36,8 +37,6 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
  }
 
- 
- 
  
  
  /**
@@ -90,7 +89,7 @@ const loadModels = (url)=>{
     })
   }
   
-  loadModels('car.glb')  
+  loadModels('/car.glb')  
   let stop_anim = false;
 const animate = (direction)=>{
   if(!stop_anim){
